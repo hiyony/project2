@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd" >
+	
+<struts-config>
+	
+	<form-beans>
+		<form-bean name = "inputform" type = "omikuji.InputForm"/>
+	</form-beans>
+	
+	<form-beans>
+		<form-bean name = "resultform" type = "omikuji.ResultForm" />
+	</form-beans>
+
+	<action-mapping>
+		
+		<action path = "/omikuji-struts/OmkjInput"
+				type = "omikuji.ActionInput"
+				name = "InputForm"
+				scope = "request">
+			<forward name = "omkjinput" path = "/omikuji-struts/OmkjInput.jsp" />
+		</action>
+		<action path = "/omikuji-struts/OmkjResult"
+				type = "omikuji.ActionResult"
+				name = "ResultForm"
+				scope = "request">
+			<forward name = "omkjresult" path = "/omikuji-struts/OmkjResult.jsp" />
+		</action>
+		
+		
+	</action-mapping>
+</struts-config>
